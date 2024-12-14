@@ -25,6 +25,6 @@ scrapy startproject bookvoed
 ## Build and run your first spider with:
 ```
 cd bookvoed
-scrapy genspider bookspider
+scrapy genspider bookstore bookstore.com
 scrapy crawl bookspider
 ```

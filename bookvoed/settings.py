@@ -62,9 +62,9 @@ DOWNLOAD_DELAY = 3
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    "bookvoed.pipelines.BookvoedPipeline": 300,
-#}
+ITEM_PIPELINES = {
+    "bookvoed.pipelines.BookvoedPipeline": 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -91,3 +91,10 @@ DOWNLOAD_DELAY = 3
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
+
+# scrapy redis config
+DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+SCHEDULER_PERSIST = True
+
+REDIS_URL = "redis://localhost:6379"

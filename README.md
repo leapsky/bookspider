@@ -28,3 +28,12 @@ cd bookvoed
 scrapy genspider bookstore bookstore.com
 scrapy crawl bookspider
 ```
+
+## Spiders: 
+Spider 'urls2queue' fills the Redis queue with urls. Spider 'bookspider' reads urls from the queue and parses pages at those links.
+It can be run in a distributed mode, with multiple instances running simultaneously.
+
+```
+scrapy crawl urls2queue
+scrapy crawl bookspider
+```
